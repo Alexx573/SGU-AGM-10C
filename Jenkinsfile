@@ -1,11 +1,8 @@
 pipeline {
     agent any
 
-    // --- ¡MEJORA! ---
-    // Definimos el nombre del proyecto en un solo lugar.
-    // Esto es más limpio que depender del nombre de la carpeta.
     environment {
-        COMPOSE_PROJECT_NAME = 'sgu-project'
+        COMPOSE_PROJECT_NAME = 'sgu_agm_10c'
     }
 
     stages {
