@@ -1,0 +1,31 @@
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# --- Java / Maven ---
+target/
+.mvn/
+*.jar
+*.war
+
+# --- Node.js / npm ---
+node_modules/
+dist/
+build/
+.npm/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# --- Archivos de entorno ---
+# (Aunque no los usamos, es buena práctica)
+.env
+.env.local
+.env.*

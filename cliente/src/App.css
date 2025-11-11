@@ -1,0 +1,62 @@
+
+:root {
+
+  --sgu-bg-dark: #1a1a2e;       
+  --sgu-surface: #2c3a52;      
+  --sgu-primary: #0f9a9a;      
+  --sgu-accent: #e9c46a;       
+  --sgu-text: #f4f4f4;        
+
+  --bs-body-bg: var(--sgu-bg-dark);
+  
+  
+  --bs-body-color: var(--sgu-text);
+  
+
+  --bs-border-color: #4a5c7a;
+
+
+  --bs-table-bg: var(--sgu-surface);
+  --bs-table-striped-bg: #3a4a65;
+  --bs-table-hover-bg: #3a4a65;
+  --bs-table-color: var(--sgu-text);
+  
+ 
+  --bs-table-head-bg: var(--sgu-primary);
+  --bs-table-head-color: var(--sgu-bg-dark);
+}
+
+
+.sgu-navbar {
+  background-color: var(--sgu-surface) !important;
+  border-bottom: 2px solid var(--sgu-primary);
+}
+
+
+.form-card {
+  background-color: var(--sgu-surface);
+  border: none;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-accent {
+  background-color: var(--sgu-accent);
+  color: var(--sgu-bg-dark);
+  font-weight: bold;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #fadf9a;
+  color: var(--sgu-bg-dark);
+}
+
+
+.action-buttons {
+
+  display: flex;
+  gap: 0.5rem; 
+}
