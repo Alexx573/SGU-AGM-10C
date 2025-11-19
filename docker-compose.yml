@@ -30,12 +30,17 @@ services:
       db.port: 3306      
       db.name: sgu-database
       db.user: root
-      db.pass: admin    
+      db.pass: admin
+      SERVER_SSL_ENABLE: true
+      SERVER_SSL_KEYSTORE: /etc/letsencrypt/live/localhost/keystore.p12
+      SERVER_SSL_KEYSTORE_PASS: changeit    
     ports:
 
       - "8081:8080"
     networks:
       - sgu-net
+    volumes:
+      - certbot-conf:/etc/letsencrypt:ro
     depends_on:
 
       - database
@@ -44,14 +49,22 @@ services:
     image: client:1.0-sgu 
     build:
       context: ./cliente 
+      args:
+        VITE_API_HOST: backend
+        VITE_API_PORT: 8080
+        VITE_API_BASE: /api
+        VITE_API_PROTOCOL: https
+
 
     container_name: sgu-frontend 
     restart: always
     ports:
 
-      - "3000:80"
+      - "3000:443"
     networks:
       - sgu-net
+    volumes:
+      - certbot-conf:/etc/letsencrypt:ro
     depends_on:
 
       - backend
@@ -65,3 +78,5 @@ networks:
 volumes:
   sgu-volume:
     external: true 
+  certbot-conf:
+    external: true

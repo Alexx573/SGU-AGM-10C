@@ -8,7 +8,13 @@ COPY package*.json ./
 RUN npm install
 
 
+
+
 COPY . .
+
+ARG API_PROTOCOL
+
+ENV VITE_API_PROTOCOL=$API_PROTOCOL
 
 RUN npm run build
 
@@ -19,7 +25,7 @@ FROM nginx:1.21-alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 
 EXPOSE 80
